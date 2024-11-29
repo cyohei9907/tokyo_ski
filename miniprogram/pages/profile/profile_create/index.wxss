@@ -1,0 +1,28 @@
+.avatar-wrapper {
+  padding: 0;
+  width: 56px !important;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+.container {
+  padding:10rpx;
+}
+
+.submit-button {
+  background-color: #1798C1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  width: 100% !important;
+  margin-top: 20rpx;
+}

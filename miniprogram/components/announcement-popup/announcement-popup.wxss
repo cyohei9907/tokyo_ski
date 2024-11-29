@@ -1,0 +1,85 @@
+/* 弹窗整体样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* 背景遮罩半透明 */
+  z-index: 1000;
+}
+
+/* 弹窗内容容器 */
+.modal-content {
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 关闭按钮 */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #999; /* 灰色图标 */
+  cursor: pointer;
+}
+
+/* 标题 */
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* 深灰色文字 */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* 内容文本 */
+.modal-body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify; /* 文本两端对齐 */
+}
+
+/* 重要信息加粗 */
+.modal-body strong {
+  color: #d9534f; /* 红色用于强调 */
+  font-weight: bold;
+}
+
+/* 联系微信信息 */
+.modal-body .wechat {
+  color: #007acc; /* 蓝色用于联系方式 */
+  font-weight: bold;
+}
+
+/* 底部按钮 */
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-footer button {
+  padding: 10px 20px;
+  background-color: #07c160; /* 微信绿色 */
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-body .paragraph {
+  margin-bottom: 15px; /* 段落间距 */
+}

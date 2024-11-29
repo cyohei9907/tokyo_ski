@@ -1,0 +1,144 @@
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+
+.menu-tab {
+  display: flex;
+  position: relative; /* 新增此行，确保角标相对于按钮定位 */
+  margin: 20rpx;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 8px rgb(170, 170, 170) inset;
+}
+
+.menu-tab-hover {
+  display: flex;
+  position: relative; /* 新增此行 */
+  margin: 20rpx;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 12px #969696 inset;
+}
+
+.red{
+  background-color: rgb(224, 115, 115, 0.5);
+  color: white;
+  font-size: 1.6rem;
+}
+.red-hover{
+  background-color: rgb(224, 115, 115, 0.8);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.blue{
+  background-color: rgb(112, 112, 207, 0.8);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.blue-hover{
+  background-color: rgb(112, 112, 207, 1);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.orange{
+  background-color: rgb(223, 164, 55, 0.8);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.orange-hover{
+  background-color: rgb(223, 164, 55, 1);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.green{
+  background-color: rgba(47, 194, 47, 0.8);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.green-hover{
+  background-color: rgb(47, 194, 47, 1);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.skybule{
+  background-color: rgba(63, 195, 218, 0.8);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.skybule-hover{
+  background-color: rgb(63, 195, 218, 1);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.pure{
+  background-color: rgba(63, 135, 218, 0.8);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.pure-hover{
+  background-color: rgb(63, 135, 218, 1);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.count-badge {
+  background-color: #e0e0e0; /* 浅灰色背景 */
+  color: #9e9e9e; /* 深灰色字体 */
+  font-size: 12px; /* 字体大小 */
+  border-radius: 8px; /* 圆角 */
+  padding: 2px 4px; /* 内边距 */
+  margin-top: 4px; /* 与文字之间的间距 */
+  text-align: center; /* 文本居中 */
+  display: inline-block; /* 使角标成为块元素 */
+}
+
+.menu-text-container {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 居中对齐 */
+  justify-content: center;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.customer-service-btn {
+  position: fixed;
+  bottom: 80px; /* 距离底部的距离 */
+  right: 30px; /* 距离右侧的距离 */
+  width: 50px; /* 圆形按钮直径 */
+  height: 50px; /* 圆形按钮直径 */
+  background-color: #abc4b75b; /* 微信绿色背景 */
+  color: white; /* 文字颜色 */
+  border-radius: 50%; /* 圆形 */
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 按钮的阴影效果 */
+  z-index: 1000; /* 确保按钮显示在最上层 */
+  cursor: pointer; /* 鼠标指针样式 */
+}
+
+.customer-service-btn image {
+  width: 40px; /* 图标宽度 */
+  height: 40px; /* 图标高度 */
+}

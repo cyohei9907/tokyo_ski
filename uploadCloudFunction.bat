@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Tencent\΢��web�����߹���\cli.bat" cloud functenv_Iddev-6g07nnege7bdad52 --n quickstartFunctions --r --project "C:\Users\cyo\WeChatProjects\miniprogram-4" --report_first --report

@@ -1,0 +1,171 @@
+.form {
+  margin: 20px;
+}
+
+.form-item {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  margin-bottom: 5px;
+}
+
+.form-input,
+.form-textarea {
+  border: 1px solid #ccc;
+  padding: 10px; 
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #1798C1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 100% !important;
+}
+
+.user-avatar {
+  width: 100%; /* 填满容器 */
+  height: 100%; /* 填满容器 */
+}
+
+/* 这里的样式大小可以根据你的需要进行调整 */
+.avatar-container {
+  position: absolute;
+  top: 20rpx; /* 顶部的距离，可根据实际情况调整 */
+  width: 100rpx; /* 头像大小 */
+  height: 100rpx; /* 头像大小 */
+  border-radius: 50%; /* 圆形 */
+  overflow: hidden; /* 隐藏溢出的部分 */
+}
+
+.range-style {
+  display: flex;
+  align-items: center;
+}
+.mar-top {
+  margin-top: 30rpx;
+}
+.picker-title {
+  font-size: 32rpx;
+  width: 150rpx;
+}
+.picker_group {
+  color: #888;
+  border: 1rpx solid #A4A6AE;
+  border-radius: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+  width: 100%;
+}
+.text-style1{
+  color:#7b7b7e;
+}
+.text-style2{
+  color:rgb(0,0,0,0.8);
+}
+.picker_group picker {
+  font-size: 34rpx;
+  height: 45rpx;
+  padding-left:20rpx;
+  padding-right:20rpx;
+  line-height: 45rpx;
+}
+
+.fullscreen-size {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* 全屏大小 */
+  height: 100%;
+  z-index: 999;
+  background-color: black;
+  transition: all 0.3s ease; /* 平滑过渡所有属性变化 */
+}
+input:focus{
+  background-color: rgb(214, 130, 19)!important;
+}
+
+.table-container {
+  display: flex;
+  overflow-x: auto; /* 允许横向滚动 */
+}
+
+.table-fixed-column {
+  position: sticky; /* 使用sticky定位来固定左侧列 */
+  left: 0; /* 固定在左侧 */
+  background-color: rgb(206, 206, 206); /* 防止滚动时内容被遮挡 */
+}
+
+.table-scrollable {
+  display: flex;
+  flex-direction:column;
+}
+
+.row {
+  display: flex;
+  flex-direction:row;
+}
+
+.cell {
+  width: 80rpx; /* 根据内容调整 */
+  padding-left: 15rpx;
+  height: 80rpx;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+ 
+}
+
+.header {
+  background-color: #87CEFA; /* 设置柔和的蓝色 (可以根据需要调整) */
+  color: white;              /* 设置文字颜色为白色 */
+  text-align: center;        /* 文字居中 */
+  height: 30px;              /* 高度为 30px */
+  line-height: 30px;         /* 让文字在高度内垂直居中 */
+  font-size: 16px;           /* 设置字体大小 */
+  font-weight: bold;         /* 使文字加粗 */
+  border-radius: 8px;        /* 设置圆角，8px 可以根据需求调整 */
+  padding: 0 10px;           /* 添加左右内边距以增加视觉效果 */
+}
+
+.image-list {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-image {
+  width: 100px; /* 设置图片列表中每张图片的宽度 */
+  height: 100px; /* 设置图片列表中每张图片的高度 */
+  margin: 5px;
+  object-fit: cover;
+}
+
+.floating-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 确保浮窗在最上层 */
+}
+
+.floating-image {
+  width: 80%; /* 可以调整 */
+  height: auto; /* 保持纵横比 */
+  max-width: 500px;
+  border-radius: 10px;
+  display: block; /* 确保图片是块级显示 */
+}

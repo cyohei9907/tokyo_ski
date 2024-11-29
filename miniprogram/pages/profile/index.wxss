@@ -1,0 +1,55 @@
+/* pages/profile/index.wxss */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 居中对齐 */
+  padding: 20rpx;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx; /* 用户信息与任务列表之间的间距 */
+}
+
+.user-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%; /* 圆形头像 */
+  margin-bottom: 10rpx; /* 头像与用户名之间的间距 */
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20rpx; /* 用户名与任务列表之间的间距 */
+}
+
+.task-list {
+  width: 100%;
+}
+
+.task-item {
+  padding: 10rpx;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10rpx;
+}
+
+.task-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.task-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.no-tasks-message {
+  text-align: center; /* 居中文本 */
+  color: #999; /* 灰色字体，使其不显得太突兀 */
+  font-size: 16px; /* 合适的字体大小 */
+  margin-top: 20rpx; /* 添加一些上方间距 */
+  padding: 20rpx; /* 添加一些内边距 */
+}

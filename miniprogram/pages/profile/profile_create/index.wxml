@@ -1,0 +1,12 @@
+<view >
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button> 
+  <form bindsubmit="submitForm" class="form">
+    <view style="padding-left: 2rem;padding-right: 1rem;">
+      <input name="nickname" style="margin-bottom: 1rem;" class="weui-input nickname" placeholder="请输入昵称"/>
+      <button formType="submit"  class="submit-button">OK</button>
+    </view>
+  </form>
+  <!-- <button bind:tap="create_test_user">login by test user</button> -->
+</view>

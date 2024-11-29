@@ -1,0 +1,22 @@
+<view>
+  <view class="profile-container">
+    <!-- 用户信息部分 -->
+    <view class="user-info">
+      <image class="user-avatar" src="{{user_info.user_icon}}" mode="aspectFill"></image>
+      <text class="user-name">{{user_info.nick_name}}</text>
+    </view>
+    <block wx:if="{{taskList.length == 0}}">
+        <view class="no-tasks-message">这里似乎什么也没有</view>
+    </block>
+    <!-- 与用户相关的任务列表 -->
+    <view class="task-list">
+      <block wx:for="{{taskList}}" wx:key="_id">
+        <view class="task-item" bindtap="onTaskItemClick" data-id="{{item._id}}" style="display: flex; align-items: center;">
+          <image src="{{item.create_user_icon}}" style="width: 1.8rem; height: 1.8rem; border-radius: 50%;"></image>
+          <text style="margin-left: 10px;">{{item.task_title}}</text> <!-- 假设任务有 task_title 属性 -->
+          <text style="font-size: 10px; margin-left: auto;">{{item.start_date}}</text> <!-- 使用 margin-left: auto; 将日期右对齐 -->
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

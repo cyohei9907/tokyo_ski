@@ -1,0 +1,120 @@
+<!-- pages/createActivePage/index.wxml -->
+<form bindsubmit="submitForm" class="form">
+  <view class="header">
+    创建活动:{{title}}
+  </view>
+  <view class="form-item" style="margin-top: 5px;">
+    <view class="form-label">标题*</view>
+    <input name="task_title" style="padding: 10px; border: 1px solid rgb(138, 138, 138);" required type="text" placeholder="" />
+  </view>
+
+  <view class="form-item">
+    <view class="form-label">时间</view>
+    <view class="range-style">
+      <view style="padding: 10px; border: 1px solid rgb(138, 138, 138); width: 100%; display: flex; flex-direction: row;">
+        <picker mode="date" value="{{start_date}}" end="{{end_date}}" bindchange="bindDateChange" style="flex: 1; text-align: center;">
+          <view class="picker">
+            <text class="{{start_date == '开始日期' ? 'text-style1' : 'text-style2'}}">{{start_date}}</text>
+          </view>
+        </picker>
+        <text class="text-style1" style="flex: 1; text-align: center;">~</text>
+        <picker mode="date" value="{{end_date}}" start="{{start_date}}" end="2028-01-01" bindchange="bindDateChange2" style="flex: 1; text-align: center;">
+          <view class="picker">
+            <text class="{{end_date == '结束日期' ? 'text-style1' : 'text-style2'}}">{{end_date}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <view class="form-label" >应募人数</view>
+    <input name="ticket_num" style="padding: 10px; border: 1px solid rgb(138, 138, 138);" required type="number" bindblur="change_ticket_num" placeholder="2" />
+  </view>
+
+  <view class="form-item">
+    <view class="form-label">简单介绍</view>
+    <textarea name="description" style="border: 1px solid rgb(138, 138, 138); padding: 10px; width: auto;" placeholder="请填写活动计划以及联系方式"></textarea>
+  </view>
+
+  <view class="form-item">
+    <view bindtap="chooseImage" class="text-style1" style="padding: 10px; border: 1px solid rgb(138, 138, 138); text-align: center; background-color: rgb(212, 231, 231);">上传群聊或个人二维码</view>
+    <view wx:if="{{qr_code_cloud_src}}">
+      <view style="border: 1px solid black; text-align: center; background-color: teal; color: white; padding: 10px; border-radius: 5rpx;" bindtap="toggleImageSize">
+        <text>点击查看二维码截图</text>
+      </view>
+    </view>
+    <view wx:if="{{is_full_screen && qr_code_cloud_src}}">
+      <image src="{{qr_code_cloud_src}}" mode="aspectFit" show-menu-by-longpress="true" bindtap="toggleImageSize" class="fullscreen-size"></image>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <view bindtap="chooseDisplayImage" class="text-style1" style="padding: 10px; border: 1px solid rgb(138, 138, 138); text-align: center; background-color: rgb(212, 231, 231);">上传展示图</view>
+    <!-- <view wx:if="{{display_image_array.length > 0}}" wx:for="display_image_array" wx:key="path">
+        <image src="{{item}}" mode="aspectFit" show-menu-by-longpress="true" bindtap="toggleImageSize" class="fullscreen-size"></image>
+    </view> -->
+    <view class="image-list">
+      <block wx:for="{{display_image_array}}" wx:key="index">
+        <image src="{{item}}" class="list-image" bindtap="onDisplayImageClick" data-src="{{item}}"></image>
+      </block>
+    </view>
+    <view wx:if="{{is_floating_image_visible}}" class="floating-image-container" bindtap="hideFloatingDisplayImage">
+      <image src="{{floating_display_image_src}}"  mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <view class="table-container" wx:if="{{wp_schedule_title_list}}">
+      <view class="table-fixed-column">
+        <!-- 固定列的内容 -->
+        <view class="cell" wx:for="{{wp_schedule_title_list}}" wx:key="index">
+          <text>{{item.position}}</text>
+        </view>
+      </view>
+      <view class="table-scrollable">
+        <!-- 可滚动部分的内容 -->
+        <view class="row" wx:for="{{wp_schedule_row_list}}" wx:key="outerIndex" wx:for-item="outerItem">
+          <view class="cell" wx:for="{{outerItem}}" wx:key="innerIndex" wx:for-item="innerItem">
+            <image src="{{innerItem.iconUrl}}"
+                   style="width: 2.2rem; height: 2.2rem;"
+                   data-position="{{innerItem.position}}"
+                   data-openid="{{innerItem.openId}}"
+                   bind:tap="updateWPUserPosition" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view style="display: flex; flex-wrap: wrap;" wx:if="{{schedule_row_list}}">
+      <view style="margin: 10rpx" wx:for="{{schedule_row_list}}" wx:key="index">
+        <image src="{{item.iconUrl}}"
+               style="width: 2.2rem; height: 2.2rem;"
+               data-position="{{item.position}}"
+               data-openid="{{item.openId}}"
+               bind:tap="updateUserPosition" />
+      </view>
+    </view>
+  </view>
+
+  <view class="form-item" wx:if="{{wp_schedule_title_list.length > 0}}">
+    <label style="margin-right: 20px;">WP票每日分配价格（日元）</label>
+    <view wx:for="{{wp_schedule_title_list}}" wx:key="outerIndex" wx:for-item="item">
+      <view style="display: flex; margin-top: 10rpx;">
+        <label>{{item.position}}</label>
+        <input type="number"
+               data-position="{{item.position}}"
+               style="border: 1px solid black; border-radius: 10rpx; margin-left: 10rpx;"
+               bindinput="priceChangeHandle" />
+      </view>
+    </view>
+  </view>
+
+  <button formType="submit" class="submit-button">创建</button>
+  <view style="font-size: 0.8rem; background-color: #D9E8FF; color: #333333; padding: 10rpx; border-radius: 10rpx; margin-bottom: 20rpx;">
+    <view>可以选择上传群聊二维码,这样可以更方便聊天，新加入的人可以通过二维码截图联系您</view>
+    <view style="font-size: 0.5rem; font-weight: 300; text-align: center;">
+      如果有什么问题想反馈，请联系微信号 Kumotanntei
+    </view>
+  </view>
+</form>

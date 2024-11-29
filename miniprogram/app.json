@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/menu/index",
+    "pages/task/index",
+    "pages/task/task_create/index",
+    "pages/task/task_detail/index",
+    "pages/search/index",
+    "pages/profile/index",
+    "pages/profile/profile_create/index"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/menu/index",
+        "text": "菜单",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home-selected.png"
+      },
+      {
+        "pagePath": "pages/search/index",
+        "text": "搜索",
+        "iconPath": "images/icon/search.png",
+        "selectedIconPath": "images/icon/search-selected.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "images/icon/profile.png",
+        "selectedIconPath": "images/icon/profile-selected.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "东京滑雪组队小助手",
+    "navigationBarTextStyle": "black"
+  },
+  "servicemarket": true,
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,35 @@
+.task-list {
+  padding: 10px;
+}
+
+.task-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 100px; /* 距离底部的距离 */
+  right: 30px;  /* 距离右侧的距离 */
+  width: 60px;  /* 按钮的宽度 */
+  height: 60px; /* 按钮的高度 */
+  background-color: #229cff; /* 按钮的背景颜色 */
+  color: white; /* 按钮的文字颜色 */
+  border-radius: 50%; /* 圆形按钮 */
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  font-size: 40px; /* 加号的字体大小 */
+  font-weight: bold; /* 让加号更醒目 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 按钮的阴影效果 */
+  z-index: 1000; /* 确保按钮显示在最上层 */
+  line-height: 1; /* 确保 line-height 不影响布局 */
+  transform: translateY(-2px); /* 将加号向上微调 2 像素 */
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  margin-top: 20px;
+}

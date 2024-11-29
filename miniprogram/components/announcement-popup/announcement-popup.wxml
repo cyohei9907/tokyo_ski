@@ -1,0 +1,33 @@
+
+<view class="modal" wx:if="{{show}}">
+  <view class="modal-content">
+    <!-- 关闭按钮 -->
+    <icon bindtap="closePopup" class="modal-close" type="cancel" size="30" />
+
+    <!-- 标题 -->
+    <view class="modal-title">更新公告</view>
+
+    <!-- 内容 -->
+    <!-- 内容 -->
+    <view class="modal-body">
+      <view class="paragraph">欢迎使用这款滑雪组队报名小程序！</view>
+      <view class="paragraph">本应用旨在为滑雪爱好者提供便捷的组队报名与信息发布服务，帮助大家快速找到合适的队伍和发布组队信息。</view>
+      <view class="paragraph">
+        <strong>所有功能完全免费，且不会收集您的个人信息。</strong> 您可以放心使用。但需要特别提醒的是，
+        <strong>对于装备与教练信息，请您自行甄别与选择。</strong>
+      </view>
+      <view class="paragraph">
+        如果在使用过程中遇到任何问题，欢迎随时联系
+        <text class="wechat">微信：Kumotanntei</text>，我们将尽力为您解答和提供帮助。
+      </view>
+      <view class="paragraph">
+        <strong>祝大家在这个雪季滑得尽兴，玩得开心！</strong>
+      </view>
+    </view>
+
+    <!-- 确认按钮 -->
+    <view class="modal-footer">
+      <button bindtap="confirmModal" bindtap="closePopup" >知道了</button>
+    </view>
+  </view>
+</view>

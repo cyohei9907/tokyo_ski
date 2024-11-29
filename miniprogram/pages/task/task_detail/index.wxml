@@ -1,0 +1,104 @@
+<!--pages/detailActivePage/index.wxml-->
+<view wx:if="{{isEnding}}" class="float-icon">
+      <div class="ending-font">済</div>
+  </view>
+  <view class="activity-detail-container">
+  <!-- 标题 -->
+  <view class="form-row">
+    <view class="form-label">标题</view>
+    <view wx:if="{{!is_edit}}" class="form-content">
+        <view class="form-content">{{record.task_title}}</view>
+    </view>
+    <view wx:if="{{is_edit}}" class="form-content">
+        <input value="{{record.task_title}}" name="task_title" style="padding: 10px;border: 1px solid rgb(138, 138, 138);" required type="text" bindinput="changetask_title" />
+    </view>
+  </view>
+  <!-- 时间 -->
+  <view class="form-row">
+      <view class="form-label">活动时间</view>
+      <view class="form-content">{{start_date}}~{{end_date}}</view>
+  </view>
+  <!-- 票数 -->
+  <view class="form-row">
+      <view wx:if="{{record.isWPType}}" class="form-label">票数</view>
+      <view wx:if="{{!record.isWPType}}" class="form-label">人数</view>
+      <view class="form-content">{{record.ticket_num}}</view>
+  </view>
+
+  <!-- 详细 -->
+  <view class="form-row">
+      <view class="form-label">详细</view>
+      <view wx:if="{{!is_edit}}" class="form-content">
+        <text>{{record.description}}</text>
+      </view>
+      <view wx:if="{{is_edit}}" class="form-content">
+        <text value="{{record.description}}" user-select="true" style="border: 1px solid rgb(138, 138, 138);padding: 10px;width: auto;" bindinput="changedescription"></text>
+      </view>
+  </view>
+
+  <view class="form-row">
+      <view class="form-label">创建时间</view>
+      <view class="form-content">{{create_time}}</view>
+  </view>
+
+  <view class="form-row">
+      <view class="form-label">创建者</view>
+      <view class="form-content">
+        <image src="{{record.create_user_icon}}"style="width: 2.2rem;height: 2.2rem;" ></image>
+      </view>
+  </view>
+  
+
+
+  <!-- 二维码相关图片 -->
+  <view class="form-row">
+    <view class="form-label">QR Code</view>
+    <view class="form-content">
+      <text style="font-size: 0.8rem; font-weight: 300; display: block;">（长按图片可识别二维码）</text>
+      <view class="form-row" style="display: flex; align-items: flex-end;">
+          <!-- 点击查看二维码截图 -->
+          <image src="{{record.qr_code_cloud_src}}" show-menu-by-longpress="true" class="qrcode-image" mode="aspectFit" bindtap="onQRCodeImageClick" data-src="{{item}}" ></image>
+
+          <view wx:if="{{is_floating_qrcode_image_visible}}" class="floating-image-container" bindtap="hideFloatingQRCodeImage">
+            <view style="background-color: white;height: 20px;padding:10px">昵称：{{record.create_user_name}}</view>
+            <image src="{{record.qr_code_cloud_src}}"  show-menu-by-longpress="true" mode="aspectFit" style="width: 100%;height:90%"></image>
+          </view>
+        <!-- 上传新的二维码 -->
+        <a wx:if="{{is_owner}}" style="color: rgb(13, 126, 22); text-decoration: underline; text-align: center; padding: 10px; border-radius: 5rpx;" bindtap="uploadNewImage">
+          更新二维码
+        </a>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-row">
+    <view class="form-label">已参加：</view>
+    <view class="form-content">
+      <view style="display: flex; flex-direction: row;">
+        <view wx:for="{{record.participating_users}}" wx:key="_id" >
+          <image src="{{item.user_icon}}"style="width: 2.2rem;height: 2.2rem;margin-right: 0.5rem;" ></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-item" wx:if="{{record.display_image_array.length>0}}">
+    <view class="image-list">
+      <block wx:for="{{record.display_image_array}}" wx:key="index">
+        <image src="{{item}}" class="list-image" bindtap="onDisplayImageClick" data-src="{{item}}"></image>
+      </block>
+    </view>
+    <view wx:if="{{is_floating_image_visible}}" class="floating-image-container" bindtap="hideFloatingDisplayImage">
+      <image src="{{floating_display_image_src}}"  mode="aspectFit" style="width: 100%;height:100%"></image>
+    </view>
+  </view>
+
+  <view class="button-container" wx:if="{{!is_share}}">
+    <view wx:if="{{!is_owner}}" style="flex: 1;">
+      <button wx:if="{{is_join}}" bind:tap="exit_task" class="submit-button">退出</button>
+      <button wx:if="{{!is_join}}" bind:tap="join_task" class="submit-button">参加</button>
+    </view>
+    <button wx:if="{{is_owner}}" bind:tap="delete_task" class="delete-button">删除</button>
+    <button open-type="share" class="share-button">分享</button>
+  </view>
+</view>

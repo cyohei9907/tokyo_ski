@@ -1,0 +1,224 @@
+.activity-detail-container {
+  padding: 20rpx;
+}
+
+.activity-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.activity-time, .activity-location, .activity-description {
+  font-size: 14px;
+  margin-top: 10rpx;
+}
+
+.form-row{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.form-label{
+  font-size:small;
+  font-weight: 600;
+  flex: 1;
+}
+.form-content{
+  font-size: small;
+  flex: 3;
+}
+.participant {
+  font-size: 12px;
+  margin-top: 5rpx;
+}
+.submit-button {
+  background-color: #1798C1;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 80px;
+  width: 100% !important;
+}
+.delete-button {
+  background-color: #c12217;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 80px;
+  width: 100% !important;
+}
+.edit-button {
+  background-color: #2d60cf;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100% !important;
+}
+.share-button {
+  background-color: #F9A602;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 30rpx;
+  width: 100% !important;
+}
+
+.fullscreen-size {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* 全屏大小 */
+  height: 100%;
+  z-index: 999;
+  background-color: black;
+  transition: all 0.4s ease; /* 平滑过渡所有属性变化 */
+}
+
+.table-container {
+  display: flex;
+  overflow-x: auto; /* 允许横向滚动 */
+}
+
+.table-fixed-column {
+  position: sticky; /* 使用sticky定位来固定左侧列 */
+  left: 0; /* 固定在左侧 */
+  background-color: rgb(206, 206, 206); /* 防止滚动时内容被遮挡 */
+  font-size: 0.75rem;
+  width: 120rpx;
+  z-index: -1;
+}
+
+.table-scrollable {
+  display: flex;
+  flex-direction:column;
+}
+
+.row {
+  display: flex;
+  flex-direction:row;
+}
+
+.cell {
+  width: 100rpx; /* 根据内容调整 */
+  padding-left: 15rpx;
+  height: 100rpx;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cell-title {
+  width: 110rpx; /* 根据内容调整 */
+  padding-left: 15rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  height:60px;
+}
+
+.tab {
+  flex-grow: 1;
+  text-align: center;
+  padding: 20rpx 0 0 0 ;
+}
+.tab:active {
+  flex-grow: 1;
+  text-align: center;
+  background-color: #eaf5fe;
+}
+
+.float-icon{
+  position: fixed;
+  background-color: rgba(145, 145, 145, 0.8);
+  width: 100%;
+  height: 100%;
+  padding: 100px 100px; 
+  z-index: 20;
+}
+.ending-font{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 150px;
+  height: 150px;
+  font-size: 6rem;
+  text-align: center;
+  color: rgb(211, 20, 20);
+  border-radius: 150px;
+  border: 5px solid rgb(196, 63, 10);
+  transform: rotate(0.05turn);
+  z-index: 21;
+}
+
+.header-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* 在你的 WXSS 文件中添加样式 */
+.button-container {
+  display: flex;              /* 使用 Flexbox 布局 */
+  justify-content: space-between; /* 按需调整按钮之间的间距 */
+  align-items: center;        /* 垂直居中按钮 */
+  margin-top: 20px;
+  gap: 10px;                  /* 设置按钮之间的间距，可以根据需要调整 */
+}
+
+.delete-button,
+.submit-button,
+.share-button {
+  flex: 1;                    /* 让按钮具有相同的宽度 */
+  margin: 5px;                /* 设置按钮的外边距 */
+}
+
+.qrcode-image{
+  width: 100px; /* 设置图片列表中每张图片的宽度 */
+  height: 100px; /* 设置图片列表中每张图片的高度 */
+  margin: 5px;
+  object-fit: cover;
+}
+
+.floating-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 确保浮窗在最上层 */
+}
+
+.image-list {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-image {
+  width: 100px; /* 设置图片列表中每张图片的宽度 */
+  height: 100px; /* 设置图片列表中每张图片的高度 */
+  margin: 5px;
+  object-fit: cover;
+}
