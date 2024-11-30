@@ -14,14 +14,13 @@
     </view>
   </view>
   <!-- 时间 -->
-  <view class="form-row">
+  <view class="form-row" wx:if="{{record.start_date != '开始日期'}}">
       <view class="form-label">活动时间</view>
       <view class="form-content">{{start_date}}~{{end_date}}</view>
   </view>
   <!-- 票数 -->
-  <view class="form-row">
-      <view wx:if="{{record.isWPType}}" class="form-label">票数</view>
-      <view wx:if="{{!record.isWPType}}" class="form-label">人数</view>
+  <view class="form-row" wx:if="{{record.ticket_num}}">
+      <view class="form-label">人数</view>
       <view class="form-content">{{record.ticket_num}}</view>
   </view>
 
@@ -85,7 +84,7 @@
   <view class="form-item" wx:if="{{record.display_image_array.length>0}}">
     <view class="image-list">
       <block wx:for="{{record.display_image_array}}" wx:key="index">
-        <image src="{{item}}" class="list-image" bindtap="onDisplayImageClick" data-src="{{item}}"></image>
+        <image src="{{item}}" class="list-image" mode="aspectFit" bindtap="onDisplayImageClick" data-src="{{item}}"></image>
       </block>
     </view>
     <view wx:if="{{is_floating_image_visible}}" class="floating-image-container" bindtap="hideFloatingDisplayImage">
