@@ -1,55 +1,55 @@
 <view>
   <view class="menu-container">
     <view style="width:48%">
-      <view class="menu-tab red" hover-class="menu-tab-hover red-hover" bindtap="toTaskPage" data-searchactivetype="wp">
-        <view class="menu-text-container">
-          WP票
-          <text class="count-badge" wx:if="{{wp_count != 0}}">{{wp_count}}</text>
-        </view>
+      <view bindtap="toTaskPage" data-searchactivetype="wp" class="img-container">
+        <image src="/images/menuImg/01.png" style="width: 100px;height:100px;"></image>
+          <view class="menu-text-container">
+            WP票<text class="count-badge" wx:if="{{wp_count != 0}}">{{wp_count}}</text>
+          </view>
       </view>
     </view>
 
     <view style="width:48%">
-      <view class="menu-tab blue" hover-class="menu-tab-hover blue-hover"  bindtap="toTaskPage" data-searchactivetype="car">
-        <view class="menu-text-container">
-          拼车
-          <text class="count-badge" wx:if="{{car_count != 0}}">{{car_count}}</text>
-        </view>
+      <view bindtap="toTaskPage" data-searchactivetype="car" class="img-container">
+        <image src="/images/menuImg/02.png" style="width: 100px;height:100px;"></image>
+          <view class="menu-text-container">
+            拼车<text class="count-badge" wx:if="{{car_count != 0}}">{{car_count}}</text>
+          </view>
       </view>
     </view>
 
     <view style="width:48%">
-      <view class="menu-tab orange" hover-class="menu-tab-hover orange-hover"  bindtap="toTaskPage" data-searchactivetype="homestay">
-        <view class="menu-text-container">
-          民宿
-          <text class="count-badge" wx:if="{{homestay_count != 0}}">{{homestay_count}}</text>
-        </view>
+      <view bindtap="toTaskPage" data-searchactivetype="homestay" class="img-container">
+        <image src="/images/menuImg/03.png" style="width: 100px;height:100px;"></image>
+          <view class="menu-text-container">
+            民宿<text class="count-badge" wx:if="{{homestay_count != 0}}">{{homestay_count}}</text>
+          </view>
       </view>
     </view>
 
     <view style="width:48%">
-      <view class="menu-tab skybule" hover-class="menu-tab-hover skybule-hover"  bindtap="toTaskPage" data-searchactivetype="equipment">
-        <view class="menu-text-container">
-          装备
-          <text class="count-badge" wx:if="{{equipment_count != 0}}">{{equipment_count}}</text>
-        </view>
+      <view bindtap="toTaskPage" data-searchactivetype="equipment" class="img-container">
+        <image src="/images/menuImg/04.png" style="width: 100px;height:100px;"></image>
+          <view class="menu-text-container">
+            装备<text class="count-badge" wx:if="{{equipment_count != 0}}">{{equipment_count}}</text>
+          </view>
       </view>
     </view>
 
     <view style="width:48%">
-      <view class="menu-tab pure" hover-class="menu-tab-hover pure-hover"  bindtap="toTaskPage" data-searchactivetype="ticket">
-        <view class="menu-text-container">
-          雪票
-          <text class="count-badge" wx:if="{{ticket_count != 0}}">{{ticket_count}}</text>
-        </view>
+      <view  bindtap="toTaskPage" data-searchactivetype="ticket" class="img-container">
+        <image src="/images/menuImg/05.png" style="width: 100px;height:100px;"></image>
+          <view class="menu-text-container">
+            雪票<text class="count-badge" wx:if="{{ticket_count != 0}}">{{ticket_count}}</text>
+          </view>
       </view>
     </view>
 
     <view style="width:48%">
-      <view class="menu-tab green" hover-class="menu-tab-hover green-hover"  bindtap="toTaskPage" data-searchactivetype="coach">
+      <view bindtap="toTaskPage" data-searchactivetype="coach" class="img-container">
+        <image src="/images/menuImg/06.png" style="width: 100px;height:100px;"></image>
         <view class="menu-text-container">
-          教练
-          <text class="count-badge" wx:if="{{coach_count != 0}}">{{coach_count}}</text>
+          教练<text class="count-badge" wx:if="{{coach_count != 0}}">{{coach_count}}</text>
         </view>
       </view>
     </view>
