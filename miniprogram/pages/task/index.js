@@ -20,6 +20,7 @@ Page({
       name: 'snowTeamCloudFunction',
       data: {
         task_type: that.data.task_type,  // 将 type 传递给云函数，这里是一个示例值
+        limit:100,
         type: 'task_select',                // 查询的函数类
         method: 'get_task_list',            // 查询的函数名
       }

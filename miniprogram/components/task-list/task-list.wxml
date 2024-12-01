@@ -1,7 +1,4 @@
 <view class="task-list">
-  <block wx:if="{{taskList.length === 0}}">
-    <view class="empty-message">暂时没有数据</view>
-  </block>
   <block wx:for="{{taskList}}" wx:key="_id">
     <view class="task-item" bindtap="onTaskItemClick" data-id="{{item._id}}" style="display: flex; align-items: center;">
       <image src="{{item.create_user_icon}}" style="width: 1.8rem; height: 1.8rem; border-radius: 50%;"></image>
@@ -9,7 +6,4 @@
       <text style="font-size: 10px; margin-left: auto;" wx:if="{{item.start_date!= '开始日期'}}">{{item.start_date}}</text>
     </view>
   </block>
-  <view class="floating-button" bindtap="onCreateTaskButtonClick">
-    <span style="height: 30px;line-height: 25px;">+</span>
-  </view>
 </view>

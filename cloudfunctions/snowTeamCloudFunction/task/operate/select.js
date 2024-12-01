@@ -8,13 +8,23 @@ exports.get_task_list = async (event, context) => {
       // 取得结束日在当前日期之前的日期
       const currentDate = new Date();
       const temp_limit_date = currentDate.getFullYear() + '-' + currentDate.getMonth() + '-' + currentDate.getDate()
-      // 查询 `task` 集合中的所有数据
-      const res = await db.collection('task').where({
+      //定义查询条件
+      const where_conditions ={
         status: "inProgress",                 // 条件 1：status 为 "inProgress"
         end_date: db.command.gt(temp_limit_date),  // 条件 2：endDate 大于当前日期
         is_active:true,                           //条件 3：活动中的事件
         task_type:event.task_type
-      }).orderBy('create_time', 'desc').get();
+      }
+      // 
+      if(event.task_type == 'all'){
+        delete where_conditions.task_type
+      }
+      
+      // 查询 `task` 集合中的所有数据
+      const res = await db.collection('task')
+                          .limit(event.limit)
+                          .where(where_conditions)
+                          .orderBy('create_time', 'desc').get();
       console.log(res);
       return {
         success: true,
