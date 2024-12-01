@@ -1,6 +1,9 @@
 {
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "announcement-popup": "/components/announcement-popup/announcement-popup"
+    "announcement-popup": "/components/announcement-popup/announcement-popup",
+    "announcement-swiper":"/components/announcement-swiper/announcement-swiper",
+    "announcement-text":"/components/announcement-text/announcement-text",
+    "task-list":"/components/task-list/task-list"
   }
 }

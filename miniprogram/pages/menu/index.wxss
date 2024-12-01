@@ -105,10 +105,12 @@
   margin-top: 4px; /* 与文字之间的间距 */
   text-align: center; /* 文本居中 */
   display: inline-block; /* 使角标成为块元素 */
+  margin-left: 5px;
 }
 
 .menu-text-container {
   margin-top: 10px;
+  font-size: large;
   display: flex;
   flex-direction: row; /* 垂直排列 */
   align-items: center; /* 居中对齐 */
@@ -152,3 +154,4 @@
   text-align: center;
   margin-bottom: 20px;
 }
+

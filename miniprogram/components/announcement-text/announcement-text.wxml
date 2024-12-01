@@ -1,0 +1,18 @@
+<view style="background-color: burlywood;display: flex;font-size: small;height: 30px;" bindtap="showQRCode">
+    <image  src="/images/icon/announcement.png" style="height: 30px;width:30px;"></image>
+  <view>
+    <text style="line-height: 30px;">滑雪组队群推荐：</text>
+  </view>
+  <view>
+    <text style="font-weight: 600;">滑雪人疗养院</text>
+     请联系微信：<text style="text-decoration: underline; color: rgb(40, 146, 233); font-weight: bold;line-height: 30px;">Jeno77</text>
+  </view>
+</view>
+
+<!-- 弹出层 -->
+<view wx:if="{{isQRCodeVisible}}" class="popup-container" bindtap="hideQRCode">
+  <view class="popup-content">
+    <image src="/components/announcement-text/imageSource/jeno77.png" style="width: 200px; height: 200px;"></image>
+    <text style="margin-top: 10px;">长按二维码以扫描</text>
+  </view>
+</view>
