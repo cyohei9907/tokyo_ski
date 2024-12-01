@@ -1,0 +1,11 @@
+/* 设置放轮播图的盒子属性 */
+swiper {
+  width: 100%;
+  height: 400rpx;
+}
+
+/* 设置轮播图图片属性 */
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
